@@ -57,6 +57,9 @@ These instructions will get you a copy of the project up and running on your loc
 - [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier) - eslint plugin prettier
 - [eslint-config-airbnb-base](https://github.com/airbnb/javascript/tree/master/packageseslint-config-airbnb-base) - packageseslint-config-airbnb-base
 - [react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom) - react-router-dom
+- [polished](https://github.com/styled-components/polished) - polished
+- [unform](https://github.com/Rocketseat/unform) - unform
+- [styled-components](https://github.com/styled-components/styled-components) - styled-components
 
 ## ✍️ Authors <a name = "authors"></a>
 
