@@ -37,12 +37,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 - NodeJs version 12.14.1 or above
 - Yarn version 1.21.1. or above
+- Clone backend repository (https://github.com/arllain/fastfeet-api)
+- Run yarn to install all dependecies for the fastfeet-api then run yarn dev
 
 ### Installing
 
 - Clone this repository
-- To install all dependecies just run yarn
-- Clone backend repository (https://github.com/arllain/fastfeet-api) and run yarn dev
+- Run yarn to install all dependecies
 - Run yarn start, then you're ready
 
 ## ⛏️ Built Using <a name = "built_using"></a>
