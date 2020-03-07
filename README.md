@@ -40,9 +40,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-- Clone the repository
+- Clone this repository
 - To install all dependecies just run yarn
-- Run json-server server.json -p 3333 -w
+- Clone backend repository (https://github.com/arllain/fastfeet-api) and run yarn dev
 - Run yarn start, then you're ready
 
 ## ⛏️ Built Using <a name = "built_using"></a>
