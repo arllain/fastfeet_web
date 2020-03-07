@@ -13,6 +13,7 @@
 ## 📝 Table of Contents
 
 - [About](#about)
+- [Demo](#demo)
 - [Getting Started](#getting_started)
 - [Deployment](#deployment)
 - [Usage](#usage)
@@ -22,7 +23,11 @@
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+This is a study case project.
+
+## Demo
+
+![gif](.github/fastfeet_web.gif)
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -30,57 +35,15 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
-
-```
-Give examples
-```
+- NodeJs version 12.14.1 or above
+- Yarn version 1.21.1. or above
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
-
-## 🔧 Running the tests <a name = "tests"></a>
-
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## 🎈 Usage <a name="usage"></a>
-
-Add notes about how to use the system.
-
-## 🚀 Deployment <a name = "deployment"></a>
-
-Add additional notes about how to deploy this on a live system.
+- Clone the repository
+- To install all dependecies just run yarn
+- Run json-server server.json -p 3333 -w
+- Run yarn start, then you're ready
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
@@ -92,6 +55,7 @@ Add additional notes about how to deploy this on a live system.
 - [eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import) - eslint plugin import
 - [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier) - eslint plugin prettier
 - [eslint-config-airbnb-base](https://github.com/airbnb/javascript/tree/master/packageseslint-config-airbnb-base) - packageseslint-config-airbnb-base
+- [react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom) - react-router-dom
 
 ## ✍️ Authors <a name = "authors"></a>
 
