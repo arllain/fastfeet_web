@@ -60,6 +60,11 @@ These instructions will get you a copy of the project up and running on your loc
 - [polished](https://github.com/styled-components/polished) - polished
 - [unform](https://github.com/Rocketseat/unform) - unform
 - [styled-components](https://github.com/styled-components/styled-components) - styled-components
+- [immer](https://github.com/immerjs/immer) - immer
+- [reactotron-react-js](https://github.com/infinitered/reactotron) - reactotron-react-js
+- [redux](https://github.com/reduxjs/redux) - redux
+- [react-redux](https://github.com/reduxjs/react-redux) - react-redux
+- [redux-saga](https://github.com/redux-saga/redux-saga) - redux-saga
 
 ## ✍️ Authors <a name = "authors"></a>
 
