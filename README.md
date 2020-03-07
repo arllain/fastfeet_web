@@ -1,68 +1,98 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+  <img alt="Fastfeet" title="Fastfeet" src=".github/logo.png" width="300px" />
+</h1>
 
-## Available Scripts
+<h3 align="center">FastFeet Shipping Company</h3>
 
-In the project directory, you can run:
+---
 
-### `yarn start`
+<p align="center"> This project is about a shipping company.
+    <br> 
+</p>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 📝 Table of Contents
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- [About](#about)
+- [Getting Started](#getting_started)
+- [Deployment](#deployment)
+- [Usage](#usage)
+- [Built Using](#built_using)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgement)
 
-### `yarn test`
+## 🧐 About <a name = "about"></a>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Write about 1-2 paragraphs describing the purpose of your project.
 
-### `yarn build`
+## 🏁 Getting Started <a name = "getting_started"></a>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+What things you need to install the software and how to install them.
 
-### `yarn eject`
+```
+Give examples
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Installing
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+A step by step series of examples that tell you how to get a development env running.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Say what the step will be
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+Give the example
+```
 
-## Learn More
+And repeat
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+until finished
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+End with an example of getting some data out of the system or using it for a little demo.
 
-### Code Splitting
+## 🔧 Running the tests <a name = "tests"></a>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Explain how to run the automated tests for this system.
 
-### Analyzing the Bundle Size
+### Break down into end to end tests
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Explain what these tests test and why
 
-### Making a Progressive Web App
+```
+Give an example
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### And coding style tests
 
-### Advanced Configuration
+Explain what these tests test and why
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+```
+Give an example
+```
 
-### Deployment
+## 🎈 Usage <a name="usage"></a>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Add notes about how to use the system.
 
-### `yarn build` fails to minify
+## 🚀 Deployment <a name = "deployment"></a>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Add additional notes about how to deploy this on a live system.
+
+## ⛏️ Built Using <a name = "built_using"></a>
+
+- [Express](https://expressjs.com/) - Server Framework
+- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [prettier](https://github.com/prettier/prettier) - Prettier
+- [eslint](https://github.com/eslint/eslint/) - eslint
+- [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) - eslint Config Prettier
+- [eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import) - eslint plugin import
+- [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier) - eslint plugin prettier
+- [eslint-config-airbnb-base](https://github.com/airbnb/javascript/tree/master/packageseslint-config-airbnb-base) - packageseslint-config-airbnb-base
+
+## ✍️ Authors <a name = "authors"></a>
+
+- [@arllain](https://github.com/arllain)
