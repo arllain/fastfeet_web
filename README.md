@@ -65,6 +65,10 @@ These instructions will get you a copy of the project up and running on your loc
 - [redux](https://github.com/reduxjs/redux) - redux
 - [react-redux](https://github.com/reduxjs/react-redux) - react-redux
 - [redux-saga](https://github.com/redux-saga/redux-saga) - redux-saga
+- [react-toastify](https://github.com/fkhadra/react-toastify) - react-toastify
+- [redux-persist](https://github.com/rt2zz/redux-persist) - redux-persist
+- [axios](https://github.com/axios/axios) - axios
+- [yup](https://github.com/jquense/yup) - yup
 
 ## ✍️ Authors <a name = "authors"></a>
 

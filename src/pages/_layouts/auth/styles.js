@@ -17,7 +17,8 @@ export const Content = styled.div`
 export const Card = styled.div`
   background: ${colors.light};
   width: 360px;
-  height: 380px;
+  height: 420px;
+  border-radius: 4px;
 
   img {
     margin: 50px 50px;
@@ -41,12 +42,20 @@ export const Card = styled.div`
       border-radius: 4px;
       height: 40px;
       padding: 0 7px;
-      color: ${colors.light};
+      color: ${colors.dark};
       margin: 10px 20px;
       width: 320px;
       &::placeholder {
         color: rgba(153, 153, 153, 0.7);
       }
+    }
+
+    span {
+      color: #fb6f91;
+      align-self: flex-start;
+      margin: 0 20px 5px 20px;
+      font-weight: bold;
+      font-size: 13px;
     }
 
     button {
