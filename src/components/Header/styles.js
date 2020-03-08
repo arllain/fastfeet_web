@@ -47,8 +47,9 @@ export const Profile = styled.div`
     a {
       display: block;
       margin-top: 2px;
-      font-size: 12px;
-      color: #999;
+      font-size: 14px;
+      color: #de3b3b;
+      opacity: 1;
     }
   }
   img {
