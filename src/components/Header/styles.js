@@ -44,14 +44,17 @@ export const Profile = styled.div`
       display: block;
       color: #333;
     }
-    a {
-      display: block;
+
+    button {
+      border: none;
+      background: ${colors.light};
       margin-top: 2px;
       font-size: 14px;
       color: #de3b3b;
       opacity: 1;
     }
   }
+
   img {
     height: 32px;
     border-radius: 50%;
