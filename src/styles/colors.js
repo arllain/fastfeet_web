@@ -5,4 +5,5 @@ export default {
   gray: '#666',
   light_gray: '#f5f5f5',
   dddddd: '#dddddd',
+  red: '#de3b3b',
 };

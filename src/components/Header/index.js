@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import logo from '~/assets/logo.svg';
 import { Container, Content, Profile } from './styles';
@@ -17,16 +17,15 @@ export default function Header() {
       <Content>
         <nav>
           <img src={logo} alt="FastFeet" />
-          {/*  <Link to="/dashboard">ENCOMENDAS</Link>
-          <Link to="/dashboard">ENTREGADORES</Link>
-          <Link to="/dashboard">DESTINATÁRIOS</Link>
-          <Link to="/dashboard">PROBLEMAS</Link> */}
+          <Link to="/deliveries"> DELIVERIES </Link>
+          <Link to="/deliverymen"> DELIVERYMEN </Link>
+          <Link to="/recipients"> RECIPIENTS </Link>
+          <Link to="/problems"> PROBLEMS </Link>
         </nav>
         <aside>
           <Profile>
             <div>
               <strong>{profile.name}</strong>
-              {/* <Link onClick={handleSignOut}>Log out</Link> */}
               <button type="button" onClick={handleSignOut}>
                 Log out
               </button>
