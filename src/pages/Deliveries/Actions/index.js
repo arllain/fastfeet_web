@@ -30,11 +30,8 @@ export default function ActionsDeliveries({ delivery }) {
       }
       modal
     >
-      {close => (
+      {() => (
         <div className="modal">
-          <button type="button" className="close" onClick={close}>
-            &times;
-          </button>
           <div className="content">
             <h3>Delivery Information</h3>
             <p>
