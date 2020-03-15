@@ -69,6 +69,8 @@ These instructions will get you a copy of the project up and running on your loc
 - [redux-persist](https://github.com/rt2zz/redux-persist) - redux-persist
 - [axios](https://github.com/axios/axios) - axios
 - [yup](https://github.com/jquense/yup) - yup
+- [date-fns](https://github.com/date-fns/date-fns) - date-fns
+- [react-icons](https://github.com/react-icons/react-icons) - react-icons
 
 ## ✍️ Authors <a name = "authors"></a>
 
