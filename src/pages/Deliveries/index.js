@@ -17,6 +17,7 @@ import {
 import Action from './Actions';
 import Status from './Status';
 import api from '~/services/api';
+import colors from '~/styles/colors';
 
 export default function Deliveries() {
   const [deliveries, setDeliveries] = useState([]);
@@ -67,7 +68,7 @@ export default function Deliveries() {
       <h2>Orders Management</h2>
       <div id="first-row">
         <Form>
-          <MdSearch size={25} color="#999999" />
+          <MdSearch size={25} color={colors.gray_99} />
           <Input
             name="search"
             placeholder="Seach for deliveries"
@@ -76,7 +77,7 @@ export default function Deliveries() {
           />
         </Form>
         <button type="button">
-          <MdAdd size={30} color="#fff" />
+          <MdAdd size={30} color={colors.light} />
           New Order
         </button>
       </div>

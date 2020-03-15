@@ -56,7 +56,7 @@ export const Content = styled.table`
   align-self: center;
   th {
     width: 10%;
-    color: #444;
+    color: ${colors.gray_44};
     text-align: left;
     padding: 8px;
     font-size: 16px;
@@ -71,7 +71,7 @@ export const Content = styled.table`
   td {
     padding: 8px;
     border-bottom: 1px;
-    color: #666;
+    color: ${colors.gray};
     font-size: 16px;
     &:last-child {
       text-align: center;
@@ -103,7 +103,7 @@ export const DeliveryTable = styled.table`
   border-spacing: 0 15px;
 
   thead th {
-    color: #444444;
+    color: ${colors.gray_44};
     text-align: left;
     padding: 10px;
     background: ${colors.light_gray};
@@ -156,7 +156,7 @@ export const NotFoundMessege = styled.div`
     align-items: center;
     justify-content: center;
     width: 75%;
-    color: #999;
+    color: ${colors.gray_99};
   }
 `;
 
