@@ -163,7 +163,7 @@ export const NotFoundMessege = styled.div`
 export const Pagination = styled.div`
   padding-top: 15px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   font-size: 12px;
 
