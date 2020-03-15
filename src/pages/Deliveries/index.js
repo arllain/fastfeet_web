@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { format, parseISO } from 'date-fns';
+import en_US from 'date-fns/locale/en-US';
 import {
   MdAdd,
   MdSearch,
@@ -12,6 +14,7 @@ import {
   NotFoundMessege,
   Pagination,
 } from './styles';
+import Action from './Actions';
 import Status from './Status';
 import api from '~/services/api';
 
@@ -29,10 +32,25 @@ export default function Deliveries() {
       const data = response.data.map(delivery => ({
         ...delivery,
         idFormatted: `#${delivery.id.toString().padStart(2, '0')}`,
-        status: <Status delivery={delivery} />,
+        initialDate:
+          delivery.start_date &&
+          format(parseISO(delivery.start_date), 'MM/dd/yyyy', {
+            locale: en_US,
+          }),
+        canceledDate:
+          delivery.canceled_at &&
+          format(parseISO(delivery.canceled_at), 'MM/dd/yyyy', {
+            locale: en_US,
+          }),
+        finalDate:
+          delivery.end_date &&
+          format(parseISO(delivery.end_date), 'MM/dd/yyyy', {
+            locale: en_US,
+          }),
       }));
 
       setDeliveries(data);
+      console.tron.log(data);
     }
     loadDeliveries();
   }, [page, searchProduct]);
@@ -98,8 +116,12 @@ export default function Deliveries() {
                   </td>
                   <td>{delivery.recipient.city}</td>
                   <td>{delivery.recipient.state}</td>
-                  <td> {delivery.status} </td>
-                  <td> Actions </td>
+                  <td>
+                    <Status delivery={delivery} />
+                  </td>
+                  <td>
+                    <Action delivery={delivery} />
+                  </td>
                 </tr>
               ))}
           </tbody>

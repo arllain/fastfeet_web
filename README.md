@@ -71,6 +71,7 @@ These instructions will get you a copy of the project up and running on your loc
 - [yup](https://github.com/jquense/yup) - yup
 - [date-fns](https://github.com/date-fns/date-fns) - date-fns
 - [react-icons](https://github.com/react-icons/react-icons) - react-icons
+- [reactjs-popup](https://github.com/yjose/reactjs-popup) - reactjs-popup
 
 ## ✍️ Authors <a name = "authors"></a>
 
