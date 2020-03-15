@@ -7,6 +7,10 @@ export default {
   dddddd: '#dddddd',
   red: '#de3b3b',
   green: '#2CA42B',
+  light_green: '#DFF0DF',
   blue: '#4D85EE',
+  light_blue: '#BAD2FF',
   yellow: '#C1BC35',
+  light_yellow: '#F0F0DF',
+  light_pink: '#FAB0B0',
 };
