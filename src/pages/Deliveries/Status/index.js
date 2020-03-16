@@ -46,5 +46,6 @@ export default function Status({ delivery }) {
 }
 
 Status.propTypes = {
-  delivery: PropTypes.element.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  delivery: PropTypes.object.isRequired,
 };
