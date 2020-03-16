@@ -12,7 +12,7 @@ import colors from '~/styles/colors';
 
 import { Container, ActionButton, ActionList, Action } from './styles';
 
-export default function ActionsDeliveries({ delivery }) {
+export default function Actions({ delivery }) {
   const [visible, setVisible] = useState(false);
 
   function handleToggleVisible() {
@@ -98,6 +98,7 @@ export default function ActionsDeliveries({ delivery }) {
   );
 }
 
-ActionsDeliveries.propTypes = {
-  delivery: PropTypes.element.isRequired,
+Actions.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  delivery: PropTypes.object.isRequired,
 };
