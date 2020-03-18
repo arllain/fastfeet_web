@@ -146,16 +146,14 @@ export const DeliveryTable = styled.table`
   }
 `;
 
-export const NotFoundMessege = styled.div`
-  width: 80%;
+export const Empty = styled.div`
+  width: 100%;
   padding: 40px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   h1 {
-    display: flex;
-    position: absolute;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 75%;
     color: ${colors.gray_99};
   }
 `;

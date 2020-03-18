@@ -24,14 +24,14 @@ export default function Status({ delivery }) {
   } else if (start_date) {
     status = {
       text: 'PENDING',
-      color: `${colors.blue}`,
-      background: `${colors.light_blue}`,
+      color: `${colors.yellow}`,
+      background: `${colors.light_yellow}`,
     };
   } else {
     status = {
-      text: 'TO DELIVER',
-      color: `${colors.yellow}`,
-      background: `${colors.light_yellow}`,
+      text: 'WITHDRAWAL',
+      color: `${colors.blue}`,
+      background: `${colors.light_blue}`,
     };
   }
 
