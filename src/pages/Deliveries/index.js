@@ -9,12 +9,7 @@ import {
   MdNavigateNext,
 } from 'react-icons/md';
 import { Form, Input } from '@rocketseat/unform';
-import {
-  Container,
-  DeliveryTable,
-  NotFoundMessege,
-  Pagination,
-} from './styles';
+import { Container, DeliveryTable, Empty, Pagination } from './styles';
 import Action from './Actions';
 import Status from './Status';
 import api from '~/services/api';
@@ -61,10 +56,10 @@ export default function Deliveries() {
   async function handleDelete(id) {
     try {
       await api.delete(`/delivery/${id}`);
-      toast.success('Encomenda deleta com sucesso');
+      toast.success('The delivery was succesful deleted');
       loadDeliveries();
-    } catch (error) {
-      toast.error('Erro ao deletar a encomenda');
+    } catch (err) {
+      toast.error('There was a problem in deleting this delivery');
     }
   }
 
@@ -140,10 +135,11 @@ export default function Deliveries() {
           </tbody>
         </DeliveryTable>
       ) : (
-        <NotFoundMessege>
+        <Empty>
           <h1>No Orders Found</h1>
-        </NotFoundMessege>
+        </Empty>
       )}
+      )
       <Pagination>
         <button
           type="button"
