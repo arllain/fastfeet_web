@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { format, parseISO } from 'date-fns';
 import en_US from 'date-fns/locale/en-US';
+import { toast } from 'react-toastify';
 import {
   MdAdd,
   MdSearch,
@@ -24,43 +25,51 @@ export default function Deliveries() {
   const [page, setPage] = useState(1);
   const [searchProduct, setSearchProduct] = useState('');
 
+  async function loadDeliveries() {
+    const response = await api.get('delivery', {
+      params: { page, q: searchProduct },
+    });
+
+    const data = response.data.map(delivery => ({
+      ...delivery,
+      idFormatted: `#${delivery.id.toString().padStart(2, '0')}`,
+      initialDate:
+        delivery.start_date &&
+        format(parseISO(delivery.start_date), 'MM/dd/yyyy', {
+          locale: en_US,
+        }),
+      canceledDate:
+        delivery.canceled_at &&
+        format(parseISO(delivery.canceled_at), 'MM/dd/yyyy', {
+          locale: en_US,
+        }),
+      finalDate:
+        delivery.end_date &&
+        format(parseISO(delivery.end_date), 'MM/dd/yyyy', {
+          locale: en_US,
+        }),
+    }));
+
+    setDeliveries(data);
+  }
+
   useEffect(() => {
-    async function loadDeliveries() {
-      const response = await api.get('delivery', {
-        params: { page, q: searchProduct },
-      });
-
-      const data = response.data.map(delivery => ({
-        ...delivery,
-        idFormatted: `#${delivery.id.toString().padStart(2, '0')}`,
-        initialDate:
-          delivery.start_date &&
-          format(parseISO(delivery.start_date), 'MM/dd/yyyy', {
-            locale: en_US,
-          }),
-        canceledDate:
-          delivery.canceled_at &&
-          format(parseISO(delivery.canceled_at), 'MM/dd/yyyy', {
-            locale: en_US,
-          }),
-        finalDate:
-          delivery.end_date &&
-          format(parseISO(delivery.end_date), 'MM/dd/yyyy', {
-            locale: en_US,
-          }),
-      }));
-
-      setDeliveries(data);
-      console.tron.log(data);
-    }
     loadDeliveries();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, searchProduct]);
 
+  async function handleDelete(id) {
+    try {
+      await api.delete(`/delivery/${id}`);
+      toast.success('Encomenda deleta com sucesso');
+      loadDeliveries();
+    } catch (error) {
+      toast.error('Erro ao deletar a encomenda');
+    }
+  }
+
   function handlePagination(props) {
-    console.tron.log(props);
-    console.tron.log(page);
     setPage(props === 'back' ? page - 1 : page + 1);
-    console.tron.log(page);
   }
 
   return (
@@ -121,7 +130,10 @@ export default function Deliveries() {
                     <Status delivery={delivery} />
                   </td>
                   <td>
-                    <Action delivery={delivery} />
+                    <Action
+                      delivery={delivery}
+                      onDelete={() => handleDelete(delivery.id)}
+                    />
                   </td>
                 </tr>
               ))}
