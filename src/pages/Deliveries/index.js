@@ -2,18 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { format, parseISO } from 'date-fns';
 import en_US from 'date-fns/locale/en-US';
 import { toast } from 'react-toastify';
-import {
-  MdAdd,
-  MdSearch,
-  MdNavigateBefore,
-  MdNavigateNext,
-} from 'react-icons/md';
-import { Form, Input } from '@rocketseat/unform';
-import { Container, DeliveryTable, Empty, Pagination } from './styles';
+import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
+import { Container, DeliveryTable, Empty, Pagination, Search } from './styles';
 import Action from './Actions';
 import Status from './Status';
 import api from '~/services/api';
-import colors from '~/styles/colors';
+import InputSearch from '~/components/InputSearch';
+import AddButton from '~/components/AddButton';
 
 export default function Deliveries() {
   const [deliveries, setDeliveries] = useState([]);
@@ -69,22 +64,15 @@ export default function Deliveries() {
 
   return (
     <Container>
-      <h2>Delivery Management</h2>
-      <div id="first-row">
-        <Form>
-          <MdSearch size={25} color={colors.gray_99} />
-          <Input
-            name="search"
-            placeholder="Seach for deliveries"
-            onChange={e => setSearchProduct(e.target.value)}
-            value={searchProduct}
-          />
-        </Form>
-        <button type="button">
-          <MdAdd size={30} color={colors.light} />
-          New Order
-        </button>
-      </div>
+      <h2>Orders Management</h2>
+      <Search>
+        <InputSearch
+          placeholder="Seach for deliveries"
+          onChange={e => setSearchProduct(e.target.value)}
+          search={searchProduct}
+        />
+        <AddButton label="New Order" />
+      </Search>
       {deliveries.length > 0 ? (
         <DeliveryTable>
           <thead>
@@ -139,7 +127,6 @@ export default function Deliveries() {
           <h1>No Orders Found</h1>
         </Empty>
       )}
-      )
       <Pagination>
         <button
           type="button"
