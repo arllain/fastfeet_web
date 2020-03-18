@@ -69,7 +69,7 @@ export default function Deliveries() {
 
   return (
     <Container>
-      <h2>Orders Management</h2>
+      <h2>Delivery Management</h2>
       <div id="first-row">
         <Form>
           <MdSearch size={25} color={colors.gray_99} />
