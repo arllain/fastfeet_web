@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { format, parseISO } from 'date-fns';
 import en_US from 'date-fns/locale/en-US';
 import { toast } from 'react-toastify';
+import { confirmAlert } from 'react-confirm-alert';
 import { Container, DeliveryTable, EmptyList, Search } from './styles';
 import Action from './Actions';
 import Status from './Status';
@@ -11,6 +12,7 @@ import AddButton from '~/components/AddButton';
 import Pagination from '~/components/Pagination';
 import history from '~/services/history';
 import Spinner from '~/components/Spinner';
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 export default function Deliveries() {
   const [deliveries, setDeliveries] = useState([]);
@@ -61,6 +63,21 @@ export default function Deliveries() {
     } catch (err) {
       toast.error('There was a problem in deleting this delivery');
     }
+  }
+
+  function handleConfrm(id) {
+    confirmAlert({
+      message: 'Are you sure you want to delete this order ?',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: () => handleDelete(id),
+        },
+        {
+          label: 'No',
+        },
+      ],
+    });
   }
 
   function handlePagination(props) {
@@ -133,7 +150,7 @@ export default function Deliveries() {
                       <td>
                         <Action
                           delivery={delivery}
-                          onDelete={() => handleDelete(delivery.id)}
+                          onDelete={() => handleConfrm(delivery.id)}
                         />
                       </td>
                     </tr>
