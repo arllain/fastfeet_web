@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { format, parseISO } from 'date-fns';
 import en_US from 'date-fns/locale/en-US';
 import { toast } from 'react-toastify';
-import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
-import { Container, DeliveryTable, Empty, Pagination, Search } from './styles';
+import { Container, DeliveryTable, Empty, Search } from './styles';
 import Action from './Actions';
 import Status from './Status';
 import api from '~/services/api';
 import InputSearch from '~/components/InputSearch';
 import AddButton from '~/components/AddButton';
+import Pagination from '~/components/Pagination';
 
 export default function Deliveries() {
   const [deliveries, setDeliveries] = useState([]);
@@ -127,23 +127,12 @@ export default function Deliveries() {
           <h1>No Orders Found</h1>
         </Empty>
       )}
-      <Pagination>
-        <button
-          type="button"
-          disabled={page < 2}
-          onClick={() => handlePagination('back')}
-        >
-          <MdNavigateBefore size={25} />
-        </button>
-        <span>Page {page}</span>
-        <button
-          type="button"
-          disabled={deliveries.length < 1}
-          onClick={() => handlePagination('next')}
-        >
-          <MdNavigateNext size={25} />
-        </button>
-      </Pagination>
+      <Pagination
+        page={page}
+        itemslength={deliveries.length}
+        previousPage={() => handlePagination('back')}
+        nextPage={() => handlePagination('next')}
+      />
     </Container>
   );
 }
