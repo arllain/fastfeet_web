@@ -73,6 +73,7 @@ These instructions will get you a copy of the project up and running on your loc
 - [react-icons](https://github.com/react-icons/react-icons) - react-icons
 - [reactjs-popup](https://github.com/yjose/reactjs-popup) - reactjs-popup
 - [react-spinners](https://github.com/davidhu2000/react-spinners) - react-spinners
+- [react-confirm-alert](https://github.com/GA-MO/react-confirm-alert) - react-confirm-alert
 
 ## ✍️ Authors <a name = "authors"></a>
 
