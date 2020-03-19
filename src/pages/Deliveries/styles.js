@@ -108,7 +108,7 @@ export const DeliveryTable = styled.table`
   }
 `;
 
-export const Empty = styled.div`
+export const EmptyList = styled.div`
   width: 100%;
   padding: 40px 40px;
   display: flex;
@@ -117,26 +117,5 @@ export const Empty = styled.div`
   flex-direction: row;
   h1 {
     color: ${colors.gray_99};
-  }
-`;
-
-export const Pagination = styled.div`
-  padding-top: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 12px;
-
-  button {
-    align-items: center;
-    transition: opacity 0.25s ease-out;
-    border-radius: 4px;
-    outline: 0;
-    border: 0;
-    padding: 8px;
-    &:disabled {
-      opacity: 0.35;
-      cursor: not-allowed;
-    }
   }
 `;

@@ -7,7 +7,7 @@
 ---
 
 <p align="center"> This project is about a shipping company.
-    <br> 
+    <br>
 </p>
 
 ## 📝 Table of Contents
@@ -72,6 +72,7 @@ These instructions will get you a copy of the project up and running on your loc
 - [date-fns](https://github.com/date-fns/date-fns) - date-fns
 - [react-icons](https://github.com/react-icons/react-icons) - react-icons
 - [reactjs-popup](https://github.com/yjose/reactjs-popup) - reactjs-popup
+- [react-spinners](https://github.com/davidhu2000/react-spinners) - react-spinners
 
 ## ✍️ Authors <a name = "authors"></a>
 
