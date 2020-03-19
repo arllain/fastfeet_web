@@ -108,7 +108,7 @@ export const DeliveryTable = styled.table`
   }
 `;
 
-export const Empty = styled.div`
+export const EmptyList = styled.div`
   width: 100%;
   padding: 40px 40px;
   display: flex;
