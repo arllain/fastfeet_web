@@ -3,7 +3,7 @@ import { format, parseISO } from 'date-fns';
 import en_US from 'date-fns/locale/en-US';
 import { toast } from 'react-toastify';
 import { confirmAlert } from 'react-confirm-alert';
-import { Container, DeliveryTable, EmptyList, Search } from './styles';
+import { Container, DeliveryTable, Search } from './styles';
 import Action from './Actions';
 import Status from './Status';
 import api from '~/services/api';
@@ -12,7 +12,8 @@ import AddButton from '~/components/AddButton';
 import Pagination from '~/components/Pagination';
 import history from '~/services/history';
 import Spinner from '~/components/Spinner';
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+import 'react-confirm-alert/src/react-confirm-alert.css';
+import EmptyList from '~/components/EmptyList';
 
 export default function Deliveries() {
   const [deliveries, setDeliveries] = useState([]);
@@ -103,13 +104,11 @@ export default function Deliveries() {
       {loading ? (
         <Spinner />
       ) : (
-        <DeliveryTable>
+        <>
           {!deliveries.length ? (
-            <EmptyList>
-              <h1>No Orders Found</h1>
-            </EmptyList>
+            <EmptyList customText="No Orders Found" />
           ) : (
-            <>
+            <DeliveryTable>
               <thead>
                 <tr>
                   <th>ID</th>
@@ -156,9 +155,9 @@ export default function Deliveries() {
                     </tr>
                   ))}
               </tbody>
-            </>
+            </DeliveryTable>
           )}
-        </DeliveryTable>
+        </>
       )}
       <Pagination
         page={page}
