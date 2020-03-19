@@ -67,7 +67,7 @@ export default function Deliveries() {
 
   function handleConfrm(id) {
     confirmAlert({
-      message: 'Are you sure you want to delete this order ?',
+      message: 'Are you sure you want to delete this delivery ?',
       buttons: [
         {
           label: 'Yes',
@@ -90,14 +90,14 @@ export default function Deliveries() {
 
   return (
     <Container>
-      <h2>Orders Management</h2>
+      <h2>Deliveries Management</h2>
       <Search>
         <InputSearch
           placeholder="Seach for deliveries"
           onChange={e => setSearchProduct(e.target.value)}
           search={searchProduct}
         />
-        <AddButton label="New Order" buttonClick={handleNavigate} />
+        <AddButton label="Delivery" buttonClick={handleNavigate} />
       </Search>
 
       {loading ? (
