@@ -15,6 +15,7 @@ import Spinner from '~/components/Spinner';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import EmptyList from '~/components/EmptyList';
 import CustomButton from '~/components/CustomButton';
+import colors from '~/styles/colors';
 
 export default function Deliveries() {
   const [deliveries, setDeliveries] = useState([]);
@@ -99,8 +100,13 @@ export default function Deliveries() {
           onChange={e => setSearchProduct(e.target.value)}
           search={searchProduct}
         />
-        <CustomButton type="button" onClick={handleNavigate} isAddButton>
-          <MdAdd size={30} color="#fff" />
+        <CustomButton
+          type="button"
+          width="143px"
+          height="36px"
+          onClick={handleNavigate}
+        >
+          <MdAdd size={30} color={colors.light} />
           Delivery
         </CustomButton>
       </Search>

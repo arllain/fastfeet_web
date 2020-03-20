@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { confirmAlert } from 'react-confirm-alert';
+import { MdAdd } from 'react-icons/md';
 import { Container, DeliveryMenTable, Search } from './styles';
 import Action from './Actions';
 import api from '~/services/api';
 import InputSearch from '~/components/InputSearch';
-import AddButton from '~/components/AddButton';
+import CustomButton from '~/components/CustomButton';
 import Pagination from '~/components/Pagination';
 import history from '~/services/history';
 import Spinner from '~/components/Spinner';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import EmptyList from '~/components/EmptyList';
+import colors from '~/styles/colors';
 
 export default function Deliveries() {
   const [deliveriesMen, setDeliveriesMen] = useState([]);
@@ -68,7 +70,7 @@ export default function Deliveries() {
   }
 
   function handleNavigate() {
-    history.push('/deliveryman/new');
+    history.push('/deliveryman/add');
   }
 
   return (
@@ -80,7 +82,15 @@ export default function Deliveries() {
           onChange={e => setSearch(e.target.value)}
           search={search}
         />
-        <AddButton label="Deliveryman" buttonClick={handleNavigate} />
+        <CustomButton
+          type="button"
+          width="143px"
+          height="36px"
+          onClick={handleNavigate}
+        >
+          <MdAdd size={30} color={colors.light} />
+          DeliveryMan
+        </CustomButton>
       </Search>
 
       {loading ? (
