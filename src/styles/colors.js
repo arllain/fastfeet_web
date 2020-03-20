@@ -18,4 +18,5 @@ export default {
   gray_cf: '#cfcece',
   gray_99: '#999999',
   gray_44: '#444',
+  gray_cc: ' #CCCCCC',
 };
