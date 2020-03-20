@@ -3,17 +3,18 @@ import { format, parseISO } from 'date-fns';
 import en_US from 'date-fns/locale/en-US';
 import { toast } from 'react-toastify';
 import { confirmAlert } from 'react-confirm-alert';
+import { MdAdd } from 'react-icons/md';
 import { Container, DeliveryTable, Search } from './styles';
 import Action from './Actions';
 import Status from './Status';
 import api from '~/services/api';
 import InputSearch from '~/components/InputSearch';
-import AddButton from '~/components/AddButton';
 import Pagination from '~/components/Pagination';
 import history from '~/services/history';
 import Spinner from '~/components/Spinner';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import EmptyList from '~/components/EmptyList';
+import CustomButton from '~/components/CustomButton';
 
 export default function Deliveries() {
   const [deliveries, setDeliveries] = useState([]);
@@ -98,7 +99,10 @@ export default function Deliveries() {
           onChange={e => setSearchProduct(e.target.value)}
           search={searchProduct}
         />
-        <AddButton label="Delivery" buttonClick={handleNavigate} />
+        <CustomButton type="button" onClick={handleNavigate} isAddButton>
+          <MdAdd size={30} color="#fff" />
+          Delivery
+        </CustomButton>
       </Search>
 
       {loading ? (
