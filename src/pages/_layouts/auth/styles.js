@@ -57,21 +57,5 @@ export const Card = styled.div`
       font-weight: bold;
       font-size: 13px;
     }
-
-    button {
-      margin: 10px 20px;
-      height: 40px;
-      background: ${colors.purple};
-      font-weight: bold;
-      color: ${colors.light};
-      border: 0;
-      border-radius: 4px;
-      font-size: 16px;
-      transition: background 0.2s;
-
-      &:hover {
-        background: ${darken(0.03, '#7D40E7')};
-      }
-    }
   }
 `;
