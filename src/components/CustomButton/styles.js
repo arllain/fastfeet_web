@@ -6,10 +6,9 @@ const defaultStyles = css`
   background: ${colors.purple} 0 0 no-repeat padding-box;
   color: ${colors.light};
   width: ${props => props.width};
-  height: ${props => props.heigh};
+  height: ${props => props.height};
+  margin: ${props => props.margin};
 
-  /* width: 142px;
-  height: 36px; */
   transition: background 0.2s;
   &:hover {
     background: ${darken(0.03, '#7d40e7')};
@@ -34,12 +33,13 @@ export const Container = styled.button`
   display: flex;
   justify-content: center;
   opacity: 1;
-
   border: 0;
   border-radius: 4px;
   text-transform: uppercase;
   letter-spacing: 0;
   align-items: center;
+  font-weight: ${props => props.fontWeigt};
+  font-size: ${props => props.fontSize};
 
   ${getButtonStyles}
 `;

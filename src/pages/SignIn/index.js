@@ -4,6 +4,7 @@ import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
 import logo from '~/assets/logo.png';
 import { signInRequest } from '~/store/modules/auth/actions';
+import CustomButton from '~/components/CustomButton';
 
 const schema = Yup.object().shape({
   email: Yup.string()
@@ -36,7 +37,16 @@ export default function SignIn() {
           placeholder="************"
           label="YOUR PASSWORD"
         />
-        <button type="submit">{loading ? 'Loading' : 'Sign in'}</button>
+        <CustomButton
+          type="submit"
+          witdth="10px"
+          height="40px"
+          margin="10px 20px"
+          fontSize="16px"
+          fontWeigt="bold"
+        >
+          {loading ? 'Loading' : 'Sign in'}
+        </CustomButton>
       </Form>
     </>
   );

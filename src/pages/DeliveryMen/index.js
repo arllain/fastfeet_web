@@ -14,25 +14,30 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 import EmptyList from '~/components/EmptyList';
 import colors from '~/styles/colors';
 
-export default function Deliveries() {
+export default function DeliveryMen() {
   const [deliveriesMen, setDeliveriesMen] = useState([]);
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(false);
 
   async function loadDeliveriesMen() {
-    setLoading(true);
-    const response = await api.get('deliveryman', {
-      params: { page, q: search },
-    });
+    try {
+      setLoading(true);
+      const response = await api.get('deliveryman', {
+        params: { page, q: search },
+      });
 
-    const data = response.data.map(deliveryman => ({
-      ...deliveryman,
-      idFormatted: `#${deliveryman.id.toString().padStart(2, '0')}`,
-    }));
+      const data = response.data.map(deliveryman => ({
+        ...deliveryman,
+        idFormatted: `#${deliveryman.id.toString().padStart(2, '0')}`,
+      }));
 
-    setDeliveriesMen(data);
-    setLoading(false);
+      setDeliveriesMen(data);
+    } catch (error) {
+      setLoading(false);
+    } finally {
+      setLoading(false);
+    }
   }
 
   useEffect(() => {
@@ -65,11 +70,15 @@ export default function Deliveries() {
     });
   }
 
+  function handleEdit(id) {
+    history.push(`/deliveryman/edit/${id}`);
+  }
+
   function handlePagination(props) {
     setPage(props === 'back' ? page - 1 : page + 1);
   }
 
-  function handleNavigate() {
+  function handleAdd() {
     history.push('/deliveryman/add');
   }
 
@@ -86,7 +95,7 @@ export default function Deliveries() {
           type="button"
           width="143px"
           height="36px"
-          onClick={handleNavigate}
+          onClick={handleAdd}
         >
           <MdAdd size={30} color={colors.light} />
           DeliveryMan
@@ -132,7 +141,10 @@ export default function Deliveries() {
                       <td>{deliveryman.name}</td>
                       <td>{deliveryman.email}</td>
                       <td>
-                        <Action onDelete={() => handleConfrm(deliveryman.id)} />
+                        <Action
+                          onDelete={() => handleConfrm(deliveryman.id)}
+                          onEdit={() => handleEdit(deliveryman.id)}
+                        />
                       </td>
                     </tr>
                   ))}
