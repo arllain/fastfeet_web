@@ -21,20 +21,25 @@ export default function Recipients() {
   const [loading, setLoading] = useState(false);
 
   async function loadRecipients() {
-    setLoading(true);
-    const response = await api.get('recipients', {
-      params: { page, q: search },
-    });
+    try {
+      setLoading(true);
+      const response = await api.get('recipients', {
+        params: { page, q: search },
+      });
 
-    const data = response.data.map(recipient => ({
-      ...recipient,
-      idFormatted: `#${recipient.id.toString().padStart(2, '0')}`,
-      address: `${recipient.street}, ${recipient.number}, ${recipient.complement} ,
-      ${recipient.city} - ${recipient.state}`,
-    }));
+      const data = response.data.map(recipient => ({
+        ...recipient,
+        idFormatted: `#${recipient.id.toString().padStart(2, '0')}`,
+        address: `${recipient.street}, ${recipient.number}, ${recipient.complement} ,
+        ${recipient.city} - ${recipient.state}`,
+      }));
 
-    setRecipients(data);
-    setLoading(false);
+      setRecipients(data);
+    } catch (error) {
+      toast.warn(`${error.message}: Please verify your internet connection.`);
+    } finally {
+      setLoading(false);
+    }
   }
 
   useEffect(() => {

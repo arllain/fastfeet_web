@@ -24,33 +24,38 @@ export default function Deliveries() {
   const [loading, setLoading] = useState(false);
 
   async function loadDeliveries() {
-    setLoading(true);
-    const response = await api.get('delivery', {
-      params: { page, q: searchProduct },
-    });
+    try {
+      setLoading(true);
+      const response = await api.get('delivery', {
+        params: { page, q: searchProduct },
+      });
 
-    const data = response.data.map(delivery => ({
-      ...delivery,
-      idFormatted: `#${delivery.id.toString().padStart(2, '0')}`,
-      initialDate:
-        delivery.start_date &&
-        format(parseISO(delivery.start_date), 'MM/dd/yyyy', {
-          locale: en_US,
-        }),
-      canceledDate:
-        delivery.canceled_at &&
-        format(parseISO(delivery.canceled_at), 'MM/dd/yyyy', {
-          locale: en_US,
-        }),
-      finalDate:
-        delivery.end_date &&
-        format(parseISO(delivery.end_date), 'MM/dd/yyyy', {
-          locale: en_US,
-        }),
-    }));
+      const data = response.data.map(delivery => ({
+        ...delivery,
+        idFormatted: `#${delivery.id.toString().padStart(2, '0')}`,
+        initialDate:
+          delivery.start_date &&
+          format(parseISO(delivery.start_date), 'MM/dd/yyyy', {
+            locale: en_US,
+          }),
+        canceledDate:
+          delivery.canceled_at &&
+          format(parseISO(delivery.canceled_at), 'MM/dd/yyyy', {
+            locale: en_US,
+          }),
+        finalDate:
+          delivery.end_date &&
+          format(parseISO(delivery.end_date), 'MM/dd/yyyy', {
+            locale: en_US,
+          }),
+      }));
 
-    setDeliveries(data);
-    setLoading(false);
+      setDeliveries(data);
+    } catch (error) {
+      toast.warn(`${error.message}: Please verify your internet connection.`);
+    } finally {
+      setLoading(false);
+    }
   }
 
   useEffect(() => {
