@@ -19,4 +19,5 @@ export default {
   gray_99: '#999999',
   gray_44: '#444',
   gray_cc: ' #CCCCCC',
+  gray_dd: '#DDDDDD',
 };

@@ -4,7 +4,7 @@ module.exports = {
     jest: true,
     browser: true,
   },
-  extends: ['airbnb', 'prettier', 'prettier/react'],
+  extends: ['plugin:react/recommended', 'airbnb', 'prettier', 'prettier/react'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -17,7 +17,14 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['react', 'jsx-a11y', 'import', 'react-hooks', 'prettier'],
+  plugins: [
+    'react',
+    'jsx-a11y',
+    'import',
+    'react-hooks',
+    'prettier',
+    'eslint-plugin-import-helpers',
+  ],
   rules: {
     'prettier/prettier': 'error',
     'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],

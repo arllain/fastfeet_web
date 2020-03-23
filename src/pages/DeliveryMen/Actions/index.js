@@ -6,7 +6,7 @@ import colors from '~/styles/colors';
 
 import { Container, ActionButton, ActionList, Action } from './styles';
 
-export default function Actions({ onDelete }) {
+export default function Actions({ onDelete, onEdit }) {
   const [visible, setVisible] = useState(false);
 
   function handleToggleVisible() {
@@ -20,7 +20,7 @@ export default function Actions({ onDelete }) {
       </ActionButton>
 
       <ActionList visible={visible}>
-        <Action>
+        <Action onClick={onEdit}>
           <p>
             <MdCreate color={colors.blue} size={15} /> Edit
           </p>
@@ -38,4 +38,5 @@ export default function Actions({ onDelete }) {
 Actions.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   onDelete: PropTypes.func.isRequired,
+  onEdit: PropTypes.func.isRequired,
 };
