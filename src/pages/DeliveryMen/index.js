@@ -34,7 +34,7 @@ export default function DeliveryMen() {
 
       setDeliveriesMen(data);
     } catch (error) {
-      setLoading(false);
+      toast.warn(`${error.message}: Please verify your internet connection.`);
     } finally {
       setLoading(false);
     }

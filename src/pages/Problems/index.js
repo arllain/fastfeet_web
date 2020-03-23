@@ -15,20 +15,25 @@ export default function Problems() {
   const [loading, setLoading] = useState(false);
 
   async function loadProblems() {
-    setLoading(true);
-    const response = await api.get('delivery/problems', {
-      params: { page },
-    });
+    try {
+      setLoading(true);
+      const response = await api.get('delivery/problems', {
+        params: { page },
+      });
 
-    const data = response.data.map(problem => ({
-      ...problem,
-      idDeliveryProblemFormatted: `#${problem.delivery.id
-        .toString()
-        .padStart(2, '0')}`,
-    }));
+      const data = response.data.map(problem => ({
+        ...problem,
+        idDeliveryProblemFormatted: `#${problem.delivery.id
+          .toString()
+          .padStart(2, '0')}`,
+      }));
 
-    setProblems(data);
-    setLoading(false);
+      setProblems(data);
+    } catch (error) {
+      toast.warn(`${error.message}: Please verify your internet connection.`);
+    } finally {
+      setLoading(false);
+    }
   }
 
   useEffect(() => {
