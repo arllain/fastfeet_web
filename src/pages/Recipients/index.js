@@ -72,12 +72,16 @@ export default function Recipients() {
     });
   }
 
-  function handlePagination(props) {
-    setPage(props === 'back' ? page - 1 : page + 1);
+  function handleAdd() {
+    history.push('/recipient/add');
   }
 
-  function handleNavigate() {
-    history.push('/recipient/add');
+  function handleEdit(id) {
+    history.push(`/recipient/edit/${id}`);
+  }
+
+  function handlePagination(props) {
+    setPage(props === 'back' ? page - 1 : page + 1);
   }
 
   return (
@@ -93,7 +97,7 @@ export default function Recipients() {
           type="button"
           width="143px"
           height="36px"
-          onClick={handleNavigate}
+          onClick={handleAdd}
         >
           <MdAdd size={30} color={colors.light} />
           Recipient
@@ -124,7 +128,10 @@ export default function Recipients() {
                       <td>{recipient.name}</td>
                       <td>{recipient.address}</td>
                       <td>
-                        <Action onDelete={() => handleConfrm(recipient.id)} />
+                        <Action
+                          onDelete={() => handleConfrm(recipient.id)}
+                          onEdit={() => handleEdit(recipient.id)}
+                        />
                       </td>
                     </tr>
                   ))}
