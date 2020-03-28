@@ -1,26 +1,32 @@
 import styled from 'styled-components';
+import colors from '~/styles/colors';
 
 export const Container = styled.div`
-  align-self: center;
-  margin: 20px;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+`;
 
-  label {
-    cursor: pointer;
-
-    &:hover {
-      opacity: 0.7;
-    }
-
-    img {
-      height: 150px;
-      width: 150px;
-      border-radius: 50%;
-      border: 3px solid rgba(255, 255, 255, 0.3);
-      background: #eee;
-    }
-
-    input {
-      display: none;
-    }
+export const Content = styled.label`
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  > strong {
+    font-size: 16px;
+    color: ${colors.gray_dd};
+  }
+  border: 2px dashed ${colors.gray_dd};
+  border-radius: 50%;
+  > img {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+  }
+  > input {
+    display: none;
   }
 `;
