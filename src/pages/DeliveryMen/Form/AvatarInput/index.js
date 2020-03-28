@@ -1,71 +1,65 @@
-/* eslint-disable react/forbid-prop-types */
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useCallback, useState } from 'react';
+import { MdInsertPhoto } from 'react-icons/md';
+
+import { useField } from '@unform/core';
 import PropTypes from 'prop-types';
-import { useField } from '@rocketseat/unform';
 
-import api from '~/services/api';
+import { Container, Content } from './styles';
 
-import { Container } from './styles';
+export default function PhotoInput({ name, ...rest }) {
+  const inputRef = useRef(null);
+  const { fieldName, registerField, defaultValue } = useField(name);
+  const [preview, setPreview] = useState(defaultValue);
 
-import icon from '~/assets/load_photo.png';
+  const handlePreview = useCallback(e => {
+    const file = e.target.files?.[0];
+    if (!file) {
+      setPreview(null);
+      return;
+    }
 
-export default function AvatarInput({ avatar }) {
-  const { defaultValue, registerField } = useField('avatar');
-
-  const [file, setFile] = useState(defaultValue && defaultValue.id);
-  const [preview, setPreview] = useState(defaultValue && defaultValue.url);
-
-  const ref = useRef();
+    const previewURL = URL.createObjectURL(file);
+    setPreview(previewURL);
+  }, []);
 
   useEffect(() => {
-    if (avatar) {
-      setPreview(avatar.url);
-      setFile(avatar.id);
-    }
-  }, [avatar]);
-
-  useEffect(() => {
-    if (ref.current) {
-      registerField({
-        name: 'avatar_id',
-        ref: ref.current,
-        path: 'dataset.file',
-      });
-    }
-  }, [ref, registerField]);
-
-  async function handleChange(e) {
-    const data = new FormData();
-
-    data.append('file', e.target.files[0]);
-
-    const res = await api.post('/files', data);
-
-    const { id, url } = res.data;
-
-    setFile(id);
-    setPreview(url);
-  }
+    registerField({
+      name: fieldName,
+      ref: inputRef.current,
+      path: 'files[0]',
+      clearValue(ref) {
+        ref.value = '';
+        setPreview(null);
+      },
+      setValue(_, value) {
+        setPreview(value);
+      },
+    });
+  }, [fieldName, registerField]);
 
   return (
     <Container>
-      <label htmlFor="avatar">
-        <img src={preview || icon} alt="Avatar" />
-
+      <Content htmlFor="avatar">
+        {preview ? (
+          <img src={preview} alt="Preview" width="150" />
+        ) : (
+          <>
+            <MdInsertPhoto size={40} color="#ddd" />
+            <strong>Add Photo</strong>
+          </>
+        )}
         <input
-          type="file"
           id="avatar"
-          accept="image/*"
-          data-file={file}
-          onChange={handleChange}
-          ref={ref}
+          type="file"
+          ref={inputRef}
+          onChange={handlePreview}
+          {...rest}
         />
-      </label>
+      </Content>
     </Container>
   );
 }
 
-AvatarInput.propTypes = {
-  // eslint-disable-next-line react/require-default-props
-  avatar: PropTypes.object,
+PhotoInput.propTypes = {
+  name: PropTypes.string.isRequired,
 };
