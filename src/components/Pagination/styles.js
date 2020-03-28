@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding-top: 15px;
+  padding-top: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 12px;
+
+  span {
+    font-size: 14px;
+    padding: 0 10px 0 10px;
+  }
 
   button {
     align-items: center;
@@ -13,7 +17,7 @@ export const Container = styled.div`
     border-radius: 4px;
     outline: 0;
     border: 0;
-    padding: 8px;
+    padding: 5px;
     &:disabled {
       opacity: 0.35;
       cursor: not-allowed;

@@ -61,7 +61,7 @@ export default function DeliveryManForm({ match }) {
           email: data.email,
         });
         toast.success('Deliveryman registered successfully');
-        history.push('/deliveryman/');
+        history.push('/deliverymen/');
       } else {
         await api.put(`/deliveryman/${id}`, {
           avatar_id: responseFile?.data?.id,
@@ -79,50 +79,13 @@ export default function DeliveryManForm({ match }) {
         });
 
         formRef.current.setErrors(errorMessages);
+      } else {
+        toast.error(`Error when ${id ? 'updating' : 'adding'} the deliveryman`);
       }
     }
   }
 
   return (
-    // <Container>
-    //   <Form initialData={deliveryman} schema={schema} onSubmit={handleSubmit}>
-    //     <Content>
-    //       <TitleArea>
-    //         <h2>{deliveryman ? 'Update ' : 'Add '}Deliveryman</h2>
-    //       </TitleArea>
-    //       <ButtonArea>
-    //         <CustomButton
-    //           type="button"
-    //           width="112px"
-    //           height="36px"
-    //           onClick={handleBackNavigate}
-    //           isBackButton
-    //         >
-    //           <MdNavigateBefore size={30} color={colors.light} />
-    //           Back
-    //         </CustomButton>
-
-    //         <CustomButton type="submit" width="112px" height="36px">
-    //           <MdCheck size={30} color={colors.light} />
-    //           Save
-    //         </CustomButton>
-    //       </ButtonArea>
-    //     </Content>
-    //     <Card>
-    //       <AvatarInput
-    //         name="avatar_id"
-    //         avatar={deliveryman && deliveryman.avatar}
-    //       />
-    //       <Input name="name" placeholder="John Doe" label="Nome" />
-    //       <Input
-    //         name="email"
-    //         type="email"
-    //         placeholder="example@email.com"
-    //         label="Email"
-    //       />
-    //     </Card>
-    //   </Form>
-    // </Container>
     <Container>
       <Content>
         <FormHearder title={id ? 'Update Deliveyman' : 'Add Deliveyman'}>

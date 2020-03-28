@@ -13,56 +13,10 @@ export const Search = styled.div`
   margin-top: 20px;
 `;
 
-export const Content = styled.table`
-  width: 80%;
-  align-self: center;
-  th {
-    width: 10%;
-    color: ${colors.gray_44};
-    text-align: left;
-    padding: 8px;
-    font-size: 16px;
-    &:first-child,
-    &:last-child {
-      width: 3%;
-    }
-    &:last-child {
-      text-align: center;
-    }
-  }
-  td {
-    padding: 8px;
-    border-bottom: 1px;
-    color: ${colors.gray};
-    font-size: 16px;
-    &:last-child {
-      text-align: center;
-    }
-    > p {
-      width: 50%;
-    }
-    ul {
-      display: flex;
-      list-style: none;
-      li {
-        display: flex;
-        align-items: center;
-        img {
-          text-align: center;
-          border-radius: 50%;
-          width: 21px;
-          height: 21px;
-          margin-right: 13px;
-        }
-      }
-    }
-  }
-`;
-
 export const RecipientTable = styled.table`
   width: 100%;
   border-collapse: separate;
-  border-spacing: 0 15px;
+  border-spacing: 0 10px;
 
   thead th {
     color: ${colors.gray_44};
@@ -83,7 +37,7 @@ export const RecipientTable = styled.table`
     border-collapse: separate;
 
     td {
-      padding: 10px;
+      padding: 7px;
       ul {
         display: flex;
         li {
