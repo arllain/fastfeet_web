@@ -46,7 +46,7 @@ export default function RecipientForm({ match }) {
       });
 
       if (!id) {
-        const response = await api.post('/recipients', {
+        await api.post('/recipients', {
           name: data.name,
           street: data.street,
           number: data.number.toString(),
@@ -56,7 +56,6 @@ export default function RecipientForm({ match }) {
           zipcode: data.zipcode,
         });
         toast.success('Recipient registered successfully');
-        // history.push(`/recipient/edit/${response.data.id}`);
         history.push('/recipients');
       } else {
         await api.put(`/recipients/${id}`, {
