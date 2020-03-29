@@ -12,7 +12,7 @@ import colors from '~/styles/colors';
 
 import { Container, ActionButton, ActionList, Action } from './styles';
 
-export default function Actions({ delivery, onDelete }) {
+export default function Actions({ delivery, onDelete, onEdit }) {
   const [visible, setVisible] = useState(false);
 
   function handleToggleVisible() {
@@ -83,7 +83,7 @@ export default function Actions({ delivery, onDelete }) {
       <ActionList visible={visible}>
         <ModalDelivery />
 
-        <Action>
+        <Action onClick={onEdit}>
           <p>
             <MdCreate color={colors.blue} size={15} /> Edit
           </p>
