@@ -88,12 +88,16 @@ export default function Deliveries() {
     });
   }
 
-  function handlePagination(props) {
-    setPage(props === 'back' ? page - 1 : page + 1);
+  function handleAdd() {
+    history.push('/delivery/add');
   }
 
-  function handleNavigate() {
-    history.push('/delivery/new');
+  function handleEdit(id) {
+    history.push(`/delivery/edit/${id}`);
+  }
+
+  function handlePagination(props) {
+    setPage(props === 'back' ? page - 1 : page + 1);
   }
 
   return (
@@ -109,7 +113,7 @@ export default function Deliveries() {
           type="button"
           width="143px"
           height="36px"
-          onClick={handleNavigate}
+          onClick={handleAdd}
         >
           <MdAdd size={30} color={colors.light} />
           Delivery
@@ -121,7 +125,7 @@ export default function Deliveries() {
       ) : (
         <>
           {!deliveries.length ? (
-            <EmptyList customText="No Orders Found" />
+            <EmptyList customText="No deliveries Found" />
           ) : (
             <DeliveryTable>
               <thead>
@@ -165,6 +169,7 @@ export default function Deliveries() {
                         <Action
                           delivery={delivery}
                           onDelete={() => handleConfrm(delivery.id)}
+                          onEdit={() => handleEdit(delivery.id)}
                         />
                       </td>
                     </tr>

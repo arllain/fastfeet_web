@@ -74,6 +74,7 @@ These instructions will get you a copy of the project up and running on your loc
 - [reactjs-popup](https://github.com/yjose/reactjs-popup) - reactjs-popup
 - [react-spinners](https://github.com/davidhu2000/react-spinners) - react-spinners
 - [react-confirm-alert](https://github.com/GA-MO/react-confirm-alert) - react-confirm-alert
+- [react-select](https://github.com/JedWatson/react-select) - react-select
 
 ## ✍️ Authors <a name = "authors"></a>
 
