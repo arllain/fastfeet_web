@@ -8,7 +8,7 @@ import colors from '~/styles/colors';
 import AvatarInput from './AvatarInput';
 import api from '~/services/api';
 import history from '~/services/history';
-import FormHearder from '~/components/FormHearder';
+import FormHeader from '~/components/FormHeader';
 import CustomInput from '~/components/CustomInput';
 
 export default function DeliveryManForm({ match }) {
@@ -88,7 +88,7 @@ export default function DeliveryManForm({ match }) {
   return (
     <Container>
       <Content>
-        <FormHearder title={id ? 'Update Deliveyman' : 'Add Deliveyman'}>
+        <FormHeader title={id ? 'Update Deliveyman' : 'Add Deliveyman'}>
           <CustomButton
             type="button"
             width="112px"
@@ -108,7 +108,7 @@ export default function DeliveryManForm({ match }) {
             <MdCheck size={30} color={colors.light} />
             Save
           </CustomButton>
-        </FormHearder>
+        </FormHeader>
 
         <UnForm ref={formRef} onSubmit={handleSubmit}>
           <AvatarInput name="avatar" />
