@@ -8,7 +8,7 @@ import CustomInput from '~/components/CustomInput';
 import colors from '~/styles/colors';
 import api from '~/services/api';
 import history from '~/services/history';
-import FormHearder from '~/components/FormHearder';
+import FormHeader from '~/components/FormHeader';
 
 export default function RecipientForm({ match }) {
   const { id } = match.params;
@@ -85,7 +85,7 @@ export default function RecipientForm({ match }) {
   return (
     <Container>
       <Content>
-        <FormHearder title={id ? 'Update Recipient' : 'Add Recipient'}>
+        <FormHeader title={id ? 'Update Recipient' : 'Add Recipient'}>
           <CustomButton
             type="button"
             width="112px"
@@ -105,7 +105,7 @@ export default function RecipientForm({ match }) {
             <MdCheck size={30} color={colors.light} />
             Save
           </CustomButton>
-        </FormHearder>
+        </FormHeader>
         <UnForm ref={formRef} onSubmit={handleSubmit}>
           <CustomInput
             id="name"
