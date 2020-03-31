@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import colors from '~/styles/colors';
 
-export const Container = styled.div`
+export const Container = styled.body`
   display: flex;
   justify-content: center;
   align-items: center;
