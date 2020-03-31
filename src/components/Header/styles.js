@@ -30,13 +30,17 @@ export const Content = styled.div`
     }
 
     a {
-      font-weight: bold;
-      color: ${colors.gray};
       margin-right: 15px;
+      font-weight: bold;
+      color: ${colors.gray_99};
       transform: color 0.3s;
 
       &:hover {
-        color: #444;
+        color: ${colors.gray_44};
+      }
+
+      &.active {
+        color: ${colors.gray_44};
       }
     }
   }

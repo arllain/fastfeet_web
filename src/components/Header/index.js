@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import logo from '~/assets/logo.svg';
 import { Container, Content, Profile } from './styles';
@@ -17,10 +17,10 @@ export default function Header() {
       <Content>
         <nav>
           <img src={logo} alt="FastFeet" />
-          <Link to="/deliveries"> DELIVERIES </Link>
-          <Link to="/deliverymen"> DELIVERYMEN </Link>
-          <Link to="/recipients"> RECIPIENTS </Link>
-          <Link to="/problems"> PROBLEMS </Link>
+          <NavLink to="/deliveries"> DELIVERIES </NavLink>
+          <NavLink to="/deliverymen"> DELIVERYMEN </NavLink>
+          <NavLink to="/recipients"> RECIPIENTS </NavLink>
+          <NavLink to="/problems"> PROBLEMS </NavLink>
         </nav>
         <aside>
           <Profile>
