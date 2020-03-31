@@ -12,6 +12,7 @@ export default {
   light_blue: '#BAD2FF',
   yellow: '#C1BC35',
   light_yellow: '#F0F0DF',
+  pink: '#fb6f91',
   light_pink: '#FAB0B0',
   black: '#000',
   gray_c6: '#C6C6C6',

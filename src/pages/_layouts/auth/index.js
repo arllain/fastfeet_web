@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Wrapper, Content, Card } from './styles';
+import { Container } from './styles';
+import SignIn from '~/pages/SignIn';
 
 export default function AuthLayout({ children }) {
   return (
-    <Wrapper>
-      <Content>
-        <Card>{children}</Card>
-      </Content>
-    </Wrapper>
+    <Container>
+      <SignIn />
+    </Container>
   );
 }
 

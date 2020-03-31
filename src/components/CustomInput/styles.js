@@ -9,7 +9,8 @@ export const Input = styled.input`
   &::placeholder {
     color: ${colors.gray_99};
   }
-  height: 45px;
+  height: ${props => props.height};
+  width: ${props => props.width};
   border: 1px solid ${colors.gray_dd};
 `;
 
