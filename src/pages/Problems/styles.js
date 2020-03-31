@@ -4,17 +4,23 @@ import colors from '~/styles/colors';
 export const Container = styled.div`
   padding: 5px 120px;
   display: flex;
+  align-content: center;
+  align-items: center;
   flex-direction: column;
 `;
 
 export const Search = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 900px;
   justify-content: space-between;
   margin-top: 20px;
 `;
 
 export const ProblemTable = styled.table`
   width: 100%;
+  max-width: 900px;
   border-collapse: separate;
   border-spacing: 0 10px;
 
