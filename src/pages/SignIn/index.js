@@ -6,7 +6,6 @@ import { signInRequest } from '~/store/modules/auth/actions';
 import CustomButton from '~/components/CustomButton';
 import { Container, Content, UnForm, Logo } from './styles';
 import CustomInput from '~/components/CustomInput';
-
 export default function SignIn() {
   const formRef = useRef();
   const dispatch = useDispatch();
@@ -69,6 +68,7 @@ export default function SignIn() {
             height="45px"
             onClick={() => formRef.current.submitForm()}
           >
+            <></>
             {loading ? 'Loading' : 'Sign in'}
           </CustomButton>
         </UnForm>
