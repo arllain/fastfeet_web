@@ -1,5 +1,6 @@
 import { Form } from '@unform/web';
 import styled from 'styled-components';
+import colors from '~/styles/colors';
 
 export const Container = styled.div`
   display: flex;
@@ -12,12 +13,16 @@ export const Content = styled.div`
 `;
 
 export const UnForm = styled(Form)`
-  display: flex;
-  flex-direction: column;
-  padding: 25px 30px;
-  background: #fff;
-  width: 100%;
+  width: 90%;
+  max-width: 900px;
+  height: 230px;
+  background: ${colors.light} 0% 0% no-repeat padding-box;
   border-radius: 4px;
+  opacity: 1;
+  padding: 32px;
+  overflow: hidden;
+  margin: 0 auto;
+
   > section {
     display: flex;
     justify-content: space-evenly;
@@ -25,5 +30,13 @@ export const UnForm = styled(Form)`
     > div:first-child {
       margin-right: 30px;
     }
+  }
+
+  span {
+    color: ${colors.pink};
+    align-self: flex-start;
+    margin: 1px 0;
+    font-weight: bold;
+    font-size: 13px;
   }
 `;
