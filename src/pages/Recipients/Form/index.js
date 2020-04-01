@@ -35,7 +35,7 @@ export default function RecipientForm({ match }) {
       const schema = Yup.object().shape({
         name: Yup.string().required('Enter a recipient name'),
         street: Yup.string().required('Enter a street'),
-        number: Yup.number().required('Enter a  number'),
+        number: Yup.string().required('Enter a  number'),
         complement: Yup.string().required('Enter the address compliment'),
         state: Yup.string().required('Enter a state'),
         city: Yup.string().required('Enter a city'),
@@ -49,7 +49,7 @@ export default function RecipientForm({ match }) {
         await api.post('/recipients', {
           name: data.name,
           street: data.street,
-          number: data.number.toString(),
+          number: data.number,
           complement: data.complement,
           state: data.state,
           city: data.city,
