@@ -33,9 +33,7 @@ export default function DeliveryForm({ match }) {
           label: response.data.deliveryman.name,
         });
 
-        formRef.current.setFieldValue('product', {
-          text: response.data.product.name,
-        });
+        formRef.current.setFieldValue('product', response.data.product.name);
       }
     }
     loadInitialData(id);
@@ -93,7 +91,7 @@ export default function DeliveryForm({ match }) {
 
       if (!id) {
         const response = await api.post('/products', {
-          name: data.product.name,
+          name: data.product,
         });
 
         const delivery = {
@@ -104,10 +102,10 @@ export default function DeliveryForm({ match }) {
         await api.post('/delivery', delivery);
         toast.success('Delivery registered successfully!');
       } else {
-        await api.put(`/deliveries/${id}`, {
-          product: data.product,
+        await api.put(`/delivery/${id}`, {
           recipient_id: data.recipient_id,
           deliveryman_id: data.deliveryman_id,
+          product_id: data.product.id,
         });
         history.push('/deliveries');
         toast.success('Delivery updated successfully!');
@@ -178,7 +176,7 @@ export default function DeliveryForm({ match }) {
             />
           </section>
           <CustomInput
-            name="product.name"
+            name="product"
             placeholder="product name"
             label="Product"
           />
@@ -187,11 +185,3 @@ export default function DeliveryForm({ match }) {
     </Container>
   );
 }
-
-DeliveryForm.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.string,
-    }).isRequired,
-  }).isRequired,
-};
