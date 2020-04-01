@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { toast } from 'react-toastify';
 import { MdNavigateBefore, MdCheck } from 'react-icons/md';
-import PropTypes from 'prop-types';
 import * as Yup from 'yup';
 import CustomButton from '~/components/CustomButton';
 import CustomInput from '~/components/CustomInput';
