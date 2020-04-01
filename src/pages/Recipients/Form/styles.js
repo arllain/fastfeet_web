@@ -13,12 +13,16 @@ export const Content = styled.div`
 `;
 
 export const UnForm = styled(Form)`
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-  background: ${colors.light};
-  width: 100%;
+  width: 90%;
+  max-width: 900px;
+  height: 330px;
+  background: ${colors.light} 0% 0% no-repeat padding-box;
   border-radius: 4px;
+  opacity: 1;
+  padding: 32px;
+  overflow: hidden;
+  margin: 0 auto;
+
   div:nth-last-child(2) {
     display: grid;
     grid-template-columns: 3fr 0.8fr 0.8fr;
@@ -27,6 +31,7 @@ export const UnForm = styled(Form)`
       margin: auto 0;
       margin-top: 18px;
     }
+
     input {
       ::-webkit-inner-spin-button {
         -webkit-appearance: none;
@@ -41,5 +46,13 @@ export const UnForm = styled(Form)`
     label {
       margin: auto 0;
     }
+  }
+
+  span {
+    color: ${colors.pink};
+    align-self: flex-start;
+    margin: 1px 0;
+    font-weight: bold;
+    font-size: 13px;
   }
 `;
