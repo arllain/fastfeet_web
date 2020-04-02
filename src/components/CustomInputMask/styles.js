@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import ReactInputMask from 'react-input-mask';
 import colors from '~/styles/colors';
 
-export const Input = styled.input`
+export const InputMask = styled(ReactInputMask)`
   padding: 12px 15px;
   font-size: 16px;
   color: ${colors.gray_44};
@@ -9,9 +10,8 @@ export const Input = styled.input`
   &::placeholder {
     color: ${colors.gray_99};
   }
-  height: ${props => props.height};
-  width: ${props => props.width};
-  border: 1px solid ${colors.gray_dd};
+  height: 45px;
+  border: 1px solid ${colors.dddddd};
 `;
 
 export const Error = styled.span`
@@ -26,7 +26,7 @@ export const Label = styled.label`
   display: flex;
   flex-direction: column;
   strong {
-    color: ${colors.gray_44};
+    ${colors.gray_44}
     font-weight: bold;
     text-align: left;
     margin-bottom: 9px;

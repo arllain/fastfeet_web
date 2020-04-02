@@ -36,12 +36,4 @@ export const UnForm = styled(Form)`
   button {
     margin-top: 20px;
   }
-
-  span {
-    color: ${colors.pink};
-    align-self: flex-start;
-    margin: 1px 0;
-    font-weight: bold;
-    font-size: 13px;
-  }
 `;
