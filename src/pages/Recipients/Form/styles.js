@@ -37,6 +37,11 @@ export const UnForm = styled(Form)`
         -webkit-appearance: none;
       }
     }
+
+    input #state {
+      text-transform: uppercase;
+    }
+
     margin-bottom: 10px;
   }
   div:nth-last-child(1) {
@@ -46,13 +51,5 @@ export const UnForm = styled(Form)`
     label {
       margin: auto 0;
     }
-  }
-
-  span {
-    color: ${colors.pink};
-    align-self: flex-start;
-    margin: 1px 0;
-    font-weight: bold;
-    font-size: 13px;
   }
 `;

@@ -9,6 +9,7 @@ import colors from '~/styles/colors';
 import api from '~/services/api';
 import history from '~/services/history';
 import FormHeader from '~/components/FormHeader';
+import CustomInputMask from '~/components/CustomInputMask';
 
 export default function RecipientForm({ match }) {
   const { id } = match.params;
@@ -82,6 +83,10 @@ export default function RecipientForm({ match }) {
     }
   }
 
+  function changeToUpperCase(e) {
+    formRef.current.setFieldValue('state', e.toUpperCase());
+  }
+
   return (
     <Container>
       <Content>
@@ -124,20 +129,28 @@ export default function RecipientForm({ match }) {
             <CustomInput
               type="number"
               name="number"
-              placeholder="1250"
+              placeholder="0"
               label="Number"
+              Max={99}
             />
-            <CustomInput
-              id="compl"
-              name="complement"
-              placeholder=""
-              label="Complement"
-            />
+            <CustomInput name="complement" placeholder="" label="Complement" />
           </div>
           <div>
             <CustomInput name="city" placeholder="Recife" label="City" />
-            <CustomInput name="state" placeholder="PE" label="State" />
-            <CustomInput name="zipcode" placeholder="55555" label="Zip Code" />
+            <CustomInput
+              name="state"
+              placeholder="PE"
+              label="State"
+              maxLength={2}
+              onChange={e => changeToUpperCase(e.target.value)}
+            />
+            <CustomInputMask
+              name="zipcode"
+              label="Zip Code"
+              mask="99999-999"
+              maskPlaceholder={null}
+              placeholder="_____-___"
+            />
           </div>
         </UnForm>
       </Content>

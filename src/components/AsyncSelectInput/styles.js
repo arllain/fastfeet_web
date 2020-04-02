@@ -17,6 +17,9 @@ export const Container = styled.div`
 `;
 
 export const Error = styled.span`
-  color: ${colors.red};
-  margin-top: 8px;
+  color: ${colors.pink};
+  align-self: flex-start;
+  margin: 1px 0;
+  font-weight: bold;
+  font-size: 13px;
 `;
